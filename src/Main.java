@@ -1,7 +1,13 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Test Branch");
-        }
+        LibraryManager library = new LibraryManager();
+
+        library.showBooks();
+
+        library.addBook();
+
+        library.removeBook();
+
+        System.out.println("Program completed successfully!");
     }
+}
