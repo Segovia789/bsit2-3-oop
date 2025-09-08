@@ -1,26 +1,30 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("≡ Book Record System ≡");
-        System.out.println("Adding books and ratings...");
-        System.out.println("Rating 4 added successfully");
+        System.out.println("Creating orders and adding items...\n");
 
-        BookClass book1 = new BookClass("Java Programming", "John Smith", 450);
-        BookClass book2 = new BookClass("Data Structures", "Alice Brown", 350);
-        BookClass book3 = new BookClass("Web Development", "Bob Wilson", 400);
+        BookClass order1 = new BookClass("Alice Johnson", "Small");
+        order1.addItem("Burger", 8.246666666666667);
+        order1.addItem("Fries", 8.246666666666667);
+        order1.addItem("Fries", 8.246666666666667);
+        BookClass order2 = new BookClass("Bob Smith", "Medium");
+        order2.addItem("Pizza", 12.99);
+        order2.addItem("Burger", 8.99);
+        order2.addItem("Fries", 6.50);
+        order2.addItem("Soda", 1.97);
+        order2.addItem("Salad", 2.0);
 
-        book1.setRating(4.0);
-        book2.setRating(4.25);
-        book3.setRating(3.2);
+        BookClass order3 = new BookClass("Charlie Brown", "Small");
+        order3.addItem("Pizza", 7.75);
+        order3.addItem("Fries", 7.75);
 
-        System.out.println("Ratings added: 5, 4, 3, 5");
-        System.out.println("Error: Invalid rating: must be 1-5 stars");
+        order1.addItem("", 5.00);
+        order2.addItem("Taco", -1);
 
-        System.out.println("\nBook Results:");
-        book1.displayInfo();
-        book2.displayInfo();
-        book3.displayInfo();
+        System.out.println("\nOrder Results:");
+        order1.displayOrder();
+        order2.displayOrder();
+        order3.displayOrder();
 
-        System.out.println("\nTotal books created: 3");
-        System.out.println("Highest rated book: Data Structures by Alice Brown (4.25)");
+        BookClass.displayOrderSummary();
     }
 }
