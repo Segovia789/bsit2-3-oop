@@ -1,29 +1,24 @@
-public class Manager extends Employee {
-    private double bonus;
-    private int teamSize;
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("=== EMPLOYEE MANAGEMENT SYSTEM ===\n");
 
-    public Manager(String name, int employeeId, double baseSalary, String department, double bonus, int teamSize) {
-        super(name, employeeId, baseSalary, department); // Call parent constructor
-        this.bonus = bonus;
-        this.teamSize = teamSize;
-        System.out.println(name + " has been promoted to Manager");
-    }
+        Manager manager = new Manager("Alice Smith", 2001, 80000, "Engineering", 15000, 8);
+        Developer developer = new Developer("Bob Johnson", 2002, 70000, "Engineering", "Java", 5);
+        Intern intern = new Intern("Charlie Brown", 2003, 30000, "Engineering", "Tech University", true);
 
-    @Override
-    public double calculateSalary() {
-        return super.calculateSalary() + bonus; // Base + Bonus
-    }
+        System.out.println("\n--- Testing Manager ---");
+        manager.displayInfo();
+        manager.work();
+        System.out.println("Monthly Salary: $" + manager.calculateSalary());
 
-    @Override
-    public void work() {
-        super.work(); // Call parent work method
-        System.out.println(name + " is managing a team of " + teamSize + " employees");
-    }
+        System.out.println("\n--- Testing Developer ---");
+        developer.displayInfo();
+        developer.work();
+        System.out.println("Monthly Salary: $" + developer.calculateSalary());
 
-    @Override
-    public void displayInfo() {
-        super.displayInfo(); // Display parent info
-        System.out.println("Bonus: $" + bonus);
-        System.out.println("Team Size: " + teamSize);
+        System.out.println("\n--- Testing Intern ---");
+        intern.displayInfo();
+        intern.work();
+        System.out.println("Monthly Salary: $" + intern.calculateSalary());
     }
 }
