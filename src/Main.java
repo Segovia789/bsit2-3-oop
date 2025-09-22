@@ -1,7 +1,11 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Test Branch");
-        }
+        Trainable buddy = new Dog("Buddy", 3);
+        Trainable tweety = new Bird("Tweety", 1);
+
+        System.out.println("Training Session Started!");
+        System.out.println("===========================");
+        buddy.performTrick();
+        tweety.performTrick();
     }
+}
