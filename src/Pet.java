@@ -14,7 +14,7 @@ abstract class Pet {
     }
 }
 
-class Dog extends Pet {
+class Dog extends Pet implements Trainable {
     public Dog(String name, int age) {
         super(name, age);
     }
@@ -22,6 +22,11 @@ class Dog extends Pet {
     @Override
     public void makeSound() {
         System.out.println(name + " says: Woof! Woof!");
+    }
+
+    @Override
+    public void performTrick() {
+        System.out.println("Training " + name + ": Sits and shakes hands");
     }
 }
 
@@ -36,7 +41,7 @@ class Cat extends Pet {
     }
 }
 
-class Bird extends Pet {
+class Bird extends Pet implements Trainable {
     public Bird(String name, int age) {
         super(name, age);
     }
@@ -45,22 +50,9 @@ class Bird extends Pet {
     public void makeSound() {
         System.out.println(name + " says: Tweet! Tweet!");
     }
-}
 
-public class Main {
-    public static void main(String[] args) {
-        Pet buddy = new Dog("Buddy", 3);
-        Pet whiskers = new Cat("Whiskers", 2);
-        Pet tweety = new Bird("Tweety", 1);
-
-        System.out.println("Welcome to the Pet Clinic!");
-        System.out.println("===============================");
-        buddy.displayInfo();
-        buddy.makeSound();
-        whiskers.displayInfo();
-        whiskers.makeSound();
-        tweety.displayInfo();
-        tweety.makeSound();
+    @Override
+    public void performTrick() {
+        System.out.println("Training " + name + ": Flies in circles and lands on perch");
     }
 }
-
